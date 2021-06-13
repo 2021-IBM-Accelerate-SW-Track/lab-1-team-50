@@ -13,11 +13,23 @@ export default function ListContainer(){
             <img class="bannerImage"src="https://i.imgur.com/Y7CWhEo.png"></img>
         </div>
         <div class="header">
-            <div className="itemAdder">
             <h1 class="title">What do you have to do?</h1>
-            </div>
-        <AddBoxIcon id="addButton">AddBox</AddBoxIcon>
+     
         </div>
+
+        <div class="add-item">
+ 
+ <TextField
+     id="standard-textarea"
+     label="Add a To-Do!"
+     placeholder="buy milk, workout, etc"
+     multiline
+ />
+
+ <AddBoxIcon id="addButton">AddBox</AddBoxIcon>
+
+</div>
+
         <div class="toDoListHolder">
 
             <ul id="list">
@@ -31,26 +43,15 @@ export default function ListContainer(){
                         />
                         }
                         label="list-item"
+
                     />
+                        <IconButton id="delete">
+                        <DeleteIcon />
+                        </IconButton>
 
                 </li>
             </ul>
-            <div class="add-item">
-<<<<<<< HEAD
-                
-=======
-                <AddBoxIcon>AddBox</AddBoxIcon><br></br>
->>>>>>> a8835c6a0f29800d5454d71f860d67d7b3679270
-                <TextField
-                    id="standard-textarea"
-                    label="Add a To-Do!"
-                    placeholder="buy milk, workout, etc"
-                    multiline
-                />
-                        <IconButton id="delete">
-                    <DeleteIcon />
-                    </IconButton>
-            </div>
+
         </div>
     </div>
 }

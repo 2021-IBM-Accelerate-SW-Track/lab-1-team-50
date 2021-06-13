@@ -2,13 +2,14 @@
   width: 1000px;
   height: 200px;
   -o-object-fit: cover;
-  object-fit: cover;
+     object-fit: cover;
+  padding: 0;
 }
 
 .title {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: large;
-  margin: 0 0 0 50%;
+  margin: 0 0 0 40%;
   padding: 0;
 }
 
@@ -16,25 +17,29 @@
   background-color: #d1eded;
   width: 1450px;
   height: 700px;
+  padding: 0;
+  margin: 0;
 }
 
 ul {
   list-style-type: none;
 }
 
-<<<<<<< HEAD
 .header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-=======
-.toDoListHolder {
-  align-content: center;
->>>>>>> a8835c6a0f29800d5454d71f860d67d7b3679270
 }
 
 #addButton {
-  margin: 0%;
+  margin: 2.5% 0 0 0;
   padding: 0;
+}
+
+.add-item {
+  margin: 0 0 0 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 /*# sourceMappingURL=list-container.css.map */
