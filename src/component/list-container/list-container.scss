@@ -1,8 +1,7 @@
 .bannerImage {
   width: 1000px;
   height: 200px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .title {
@@ -13,7 +12,7 @@
 }
 
 .list-container {
-  background-color: #d1eded;
+  background-color: rgb(209, 237, 237);
   width: 1450px;
   height: 700px;
 }
@@ -22,14 +21,21 @@ ul {
   list-style-type: none;
 }
 
+// .addButton {
+//   border-radius: 10px;
+//   margin: 0;
+//   padding: 0 0 0 10%;
+// }
 .header {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
-
 #addButton {
   margin: 0%;
   padding: 0;
 }
-/*# sourceMappingURL=list-container.css.map */
+
+// .toDoListHolder {
+//   position: fixed;
+//   left: 50%;
+//   right: 50%;
+// }

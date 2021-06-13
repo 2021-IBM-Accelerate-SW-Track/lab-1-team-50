@@ -13,9 +13,13 @@ export default function ListContainer(){
             <img class="bannerImage"src="https://i.imgur.com/Y7CWhEo.png"></img>
         </div>
         <div class="header">
-        <h class="title">What do you have to do?</h>
+            <div className="itemAdder">
+            <h1 class="title">What do you have to do?</h1>
+            </div>
+        <AddBoxIcon id="addButton">AddBox</AddBoxIcon>
         </div>
         <div class="toDoListHolder">
+
             <ul id="list">
                 <li id="item">
                     <FormControlLabel
@@ -28,19 +32,20 @@ export default function ListContainer(){
                         }
                         label="list-item"
                     />
-                    <IconButton id="delete">
-                    <DeleteIcon />
-                    </IconButton>
+
                 </li>
             </ul>
             <div class="add-item">
-                <AddBoxIcon>AddBox</AddBoxIcon>
+                
                 <TextField
                     id="standard-textarea"
                     label="Add a To-Do!"
                     placeholder="buy milk, workout, etc"
                     multiline
                 />
+                        <IconButton id="delete">
+                    <DeleteIcon />
+                    </IconButton>
             </div>
         </div>
     </div>
