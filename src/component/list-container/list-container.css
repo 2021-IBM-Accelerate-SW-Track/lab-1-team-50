@@ -18,3 +18,9 @@
 .addButton {
   border-radius: 10px;
 }
+
+.toDoListHolder {
+  position: fixed;
+  left: 50%;
+  right: 50%;
+}
