@@ -36,7 +36,11 @@ export default function ListContainer(){
                 </li>
             </ul>
             <div class="add-item">
+<<<<<<< HEAD
                 
+=======
+                <AddBoxIcon>AddBox</AddBoxIcon><br></br>
+>>>>>>> a8835c6a0f29800d5454d71f860d67d7b3679270
                 <TextField
                     id="standard-textarea"
                     label="Add a To-Do!"
