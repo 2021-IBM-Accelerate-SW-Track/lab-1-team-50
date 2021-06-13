@@ -1,6 +1,8 @@
 import './list-container.css';
 import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/Delete';
+import Checkbox from '@material-ui/core/Checkbox';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
 
 export default function ListContainer(){
     return <div class="list-container">
@@ -13,6 +15,16 @@ export default function ListContainer(){
         <div class="content">
             <ul id="list">
                 <li id="item">
+                <FormControlLabel
+                    control={
+                    <Checkbox
+                        // checked={state.checkedF}
+                        // onChange={handleChange}
+                        name="checkedF"
+                    />
+                    }
+                    label="list-item"
+                />
                 <IconButton aria-label="delete">
                 <DeleteIcon />
                 </IconButton>
