@@ -34,7 +34,7 @@ export default function ListContainer(){
                 </li>
             </ul>
             <div class="add-item">
-                <AddBoxIcon>AddBox</AddBoxIcon>
+                <AddBoxIcon>AddBox</AddBoxIcon><br></br>
                 <TextField
                     id="standard-textarea"
                     label="Add a To-Do!"

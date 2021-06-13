@@ -20,7 +20,5 @@
 }
 
 .toDoListHolder {
-  position: fixed;
-  left: 50%;
-  right: 50%;
+  align-content: center;
 }
