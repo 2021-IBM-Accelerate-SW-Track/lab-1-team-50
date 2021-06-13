@@ -15,7 +15,7 @@ export default function ListContainer(){
         <div class="header">
         <h class="title">What do you have to do?</h>
         </div>
-        <div class="content">
+        <div class="toDoListHolder">
             <ul id="list">
                 <li id="item">
                     <FormControlLabel
@@ -28,7 +28,7 @@ export default function ListContainer(){
                         }
                         label="list-item"
                     />
-                    <IconButton aria-label="delete">
+                    <IconButton id="delete">
                     <DeleteIcon />
                     </IconButton>
                 </li>
@@ -38,7 +38,7 @@ export default function ListContainer(){
                 <TextField
                     id="standard-textarea"
                     label="Add a To-Do!"
-                    placeholder="buy milk, workout,etc"
+                    placeholder="buy milk, workout, etc"
                     multiline
                 />
             </div>
