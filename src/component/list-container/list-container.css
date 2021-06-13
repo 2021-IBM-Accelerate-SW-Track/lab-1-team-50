@@ -22,3 +22,7 @@
 .toDoListHolder {
   align-content: center;
 }
+
+.item {
+  display: flex;
+}

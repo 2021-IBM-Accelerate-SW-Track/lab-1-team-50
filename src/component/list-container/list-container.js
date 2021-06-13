@@ -3,7 +3,6 @@ import './list-container.css';
 import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/Delete';
 import Checkbox from '@material-ui/core/Checkbox';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
 import TextField from '@material-ui/core/TextField';
 import AddBoxIcon from '@material-ui/icons/AddBox';
 
@@ -13,27 +12,23 @@ export default function ListContainer(){
             <img class="bannerImage"src="https://i.imgur.com/Y7CWhEo.png"></img>
         </div>
         <div class="header">
-        <h class="title">What do you have to do?</h>
+        <h1 class="title">What do you have to do?</h1>
         </div>
         <div class="toDoListHolder">
             <ul id="list">
-                <li id="item">
-                    <FormControlLabel
-                        control={
-                        <Checkbox
-                            // checked={state.checkedF}
-                            // onChange={handleChange}
-                            name="checkedF"
-                        />
-                        }
-                        label="list-item"
+                <li class="item" id="item">
+                    <Checkbox
+                        // checked={checked}
+                        // onChange={handleChange}
+                        id="checkbox"
                     />
+                    <p class="text"></p>
                     <IconButton id="delete">
                     <DeleteIcon />
                     </IconButton>
                 </li>
             </ul>
-            <div class="add-item">
+            <div id="input">
                 <AddBoxIcon>AddBox</AddBoxIcon><br></br>
                 <TextField
                     id="standard-textarea"
@@ -44,4 +39,5 @@ export default function ListContainer(){
             </div>
         </div>
     </div>
+    
 }
