@@ -1,7 +1,6 @@
 .bannerImage {
   width: 1000px;
   height: 200px;
-  -o-object-fit: cover;
   object-fit: cover;
   padding: 0;
 }
@@ -14,7 +13,7 @@
 }
 
 .list-container {
-  background-color: #d1eded;
+  background-color: rgb(209, 237, 237);
   width: 1450px;
   height: 700px;
   padding: 0;
@@ -26,23 +25,13 @@ ul {
 }
 
 .header {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
-
-.item {
-  display: flex;
-}
-
 #addButton {
   margin: 2.5% 0 0 0;
   padding: 0;
 }
-
-#input {
+.input {
   margin: 0 0 0 40%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
