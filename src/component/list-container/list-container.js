@@ -9,26 +9,17 @@ import AddBoxIcon from "@material-ui/icons/AddBox";
 export default function ListContainer() {
   return (
     <div class="list-container">
-      <div class="banner">
-        <img class="bannerImage" src="https://i.imgur.com/Y7CWhEo.png"></img>
-      </div>
-      <div class="header">
-        <h1 class="title">What do you have to do?</h1>
-      </div>
-
       <div id="input">
-        <br></br>
+        <Checkbox
+          // checked={checked}
+          // onChange={handleChange}
+          id="checkbox"
+        />
+        <p class="text"></p>
+        <IconButton id="delete">
+          <DeleteIcon />
+        </IconButton>
       </div>
-
-      <Checkbox
-        // checked={checked}
-        // onChange={handleChange}
-        id="checkbox"
-      />
-      <p class="text"></p>
-      <IconButton id="delete">
-        <DeleteIcon />
-      </IconButton>
     </div>
   );
 }
