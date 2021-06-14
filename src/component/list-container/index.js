@@ -1,46 +1,46 @@
-import React, {useState} from 'react';
+const list = document.getElementById("list");
+const [checked, setChecked] = React.useState(true);
 
-import TextField from '@material-ui/core/TextField';
-import Button from "./button";
+const handleChange = (event) => {
+  setChecked(event.target.checked);
+};
 
-const index = ({addTodo}) => {
-
-    const [todo, setTodo] = useState({id: "", task: ""});
-
-    function inputChange(e) {
-        setTodo({
-            ...todo,
-            task: e.target.value
-        });
-    }
-
-    function handleAdd(e) {
-        e.preventDefault();
-        if (todo.task.trim()) {
-            addTodo({
-                ...todo,
-                id: Math.random(10000) + 1
-            });
-            setTodo({
-                ...todo,
-                task: ""
-            });
-        }
-    }
-
-    return (
-        <div>
-            <div class="add-item">
-                <TextField id="standard-textarea" label="Add a To-Do!" placeholder="buy milk, workout, etc" multiline="true"
-                    onChange={inputChange}/>
-
-                <Button onClick={handleAdd}/>
-            </div>
-            <li>{
-                todo.task
-            }</li>
-        </div>
-    )
+let LIST = [];
+let id = 0;
+/* Each time an item is entered, this will add a list item to the html*/
+function addToDo(toDo) {
+  const text = `<li class="item id="item">
+                    <Checkbox
+                        // checked={checked}
+                        // onChange={handleChange}
+                        id="checkbox"
+                    />
+                    <p class="text">${toDo}</p>
+                    <IconButton id="delete">
+                    <DeleteIcon />
+                    </IconButton>
+                </li>`;
+  const position = "beforeend";
+  list.insertAdjacentHTML(position, text);
 }
 
-export default index
+/* When user types in the text field, this event listener will add the toDo function into a
+    list storage with default parameters*/
+const input = document.getElementById("input");
+document.addEventListener("keyup", function (event) {
+  if (event.key === 13) {
+    const toDo = input.value;
+    if (toDo) {
+      addToDo(toDo, id, false, false);
+      LIST.push({
+        name: toDo,
+        id: id,
+        done: false,
+        trash: false,
+      });
+      input.value = "";
+      id++;
+    }
+    input.value = ""; //reset the input back to an empty string
+  }
+});

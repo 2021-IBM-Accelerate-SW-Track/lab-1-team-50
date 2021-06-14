@@ -2,7 +2,7 @@
   width: 1000px;
   height: 200px;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   padding: 0;
 }
 
@@ -29,17 +29,22 @@ ul {
   display: flex;
 }
 
+.item {
+  display: flex;
+}
+
 #addButton {
   margin: 0;
   padding: 0px;
 }
 
-.add-item {
+#input {
   margin: 0 0 0 40%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
+<<<<<<< HEAD
 
 #buttonClick {
   padding: 1%;
@@ -47,3 +52,5 @@ ul {
   cursor: pointer;
 }
 /*# sourceMappingURL=list-container.css.map */
+=======
+>>>>>>> 342cbda19e6ad3e7336fcc737e9419ea70a4e41d
