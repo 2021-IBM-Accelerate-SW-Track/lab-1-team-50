@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import List from "./list";
+import TextField from "@material-ui/core/TextField";
 
 class ListUpdate extends Component {
   constructor(props) {
@@ -23,9 +24,12 @@ class ListUpdate extends Component {
   render() {
     return (
       <div>
-        <input type="text" onChange={this.updateInput}></input>
-        {/* <input type="submit" onClick={this.handleSubmit}></input> */}
-
+        {/* <input type="text" onChange={this.updateInput}></input> */}
+        <TextField
+          label="Add a To-Do!"
+          placeholder="buy milk, workout, etc"
+          onChange={this.updateInput}
+        />
         <List text={this.state.username} />
       </div>
     );
