@@ -1,57 +1,32 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './list-container.css';
-import IconButton from '@material-ui/core/IconButton';
-import DeleteIcon from '@material-ui/icons/Delete';
-import Checkbox from '@material-ui/core/Checkbox';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import TextField from '@material-ui/core/TextField';
-import AddBoxIcon from '@material-ui/icons/AddBox';
+import Todo from "./todo";
+import Index from "./index"
 
-export default function ListContainer(){
+
+export default function ListContainer() {
+    const [todos, setTodo] = useState([]);
+
+    function addTodo(todo) {
+        setTodo([
+            todo,
+            ...todos
+        ]);
+    }
+
     return <div class="list-container">
         <div class="banner">
-            <img class="bannerImage"src="https://i.imgur.com/Y7CWhEo.png"></img>
+            <img class="bannerImage" src="https://i.imgur.com/Y7CWhEo.png" alt="todo header"></img>
         </div>
         <div class="header">
             <h1 class="title">What do you have to do?</h1>
-     
         </div>
 
-        <div class="add-item">
- 
- <TextField
-     id="standard-textarea"
-     label="Add a To-Do!"
-     placeholder="buy milk, workout, etc"
-     multiline
- />
+        <Index addTodo={addTodo}/>
 
- <AddBoxIcon id="addButton">AddBox</AddBoxIcon>
-
-</div>
 
         <div class="toDoListHolder">
-
-            <ul id="list">
-                <li id="item">
-                    <FormControlLabel
-                        control={
-                        <Checkbox
-                            // checked={state.checkedF}
-                            // onChange={handleChange}
-                            name="checkedF"
-                        />
-                        }
-                        label="list-item"
-
-                    />
-                        <IconButton id="delete">
-                        <DeleteIcon />
-                        </IconButton>
-
-                </li>
-            </ul>
-
+            <Todo/>
         </div>
     </div>
 }

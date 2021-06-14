@@ -14,10 +14,8 @@
 
 .list-container {
   background-color: rgb(209, 237, 237);
-  width: 1450px;
-  height: 700px;
-  padding: 0;
-  margin: 0;
+  margin: 2% 10% 10% 10%;
+  padding: 0 0 20% 0;
 }
 
 ul {
@@ -28,10 +26,15 @@ ul {
   display: flex;
 }
 #addButton {
-  margin: 2.5% 0 0 0;
-  padding: 0;
+  margin: 0;
+  padding: 0px;
 }
 .add-item {
   margin: 0 0 0 40%;
   display: flex;
+}
+#buttonClick{
+  padding: 1%;
+  margin: 0 0 0 1%;
+  cursor: pointer;
 }

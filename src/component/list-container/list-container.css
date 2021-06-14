@@ -15,10 +15,8 @@
 
 .list-container {
   background-color: #d1eded;
-  width: 1450px;
-  height: 700px;
-  padding: 0;
-  margin: 0;
+  margin: 2% 10% 10% 10%;
+  padding: 0 0 20% 0;
 }
 
 ul {
@@ -32,8 +30,8 @@ ul {
 }
 
 #addButton {
-  margin: 2.5% 0 0 0;
-  padding: 0;
+  margin: 0;
+  padding: 0px;
 }
 
 .add-item {
@@ -41,5 +39,11 @@ ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+#buttonClick {
+  padding: 1%;
+  margin: 0 0 0 1%;
+  cursor: pointer;
 }
 /*# sourceMappingURL=list-container.css.map */
