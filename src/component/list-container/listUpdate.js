@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import List from "./list";
 import TextField from "@material-ui/core/TextField";
+import "./listUpdate.css";
 
 class ListUpdate extends Component {
   constructor(props) {
@@ -23,14 +24,14 @@ class ListUpdate extends Component {
   }
   render() {
     return (
-      <div>
+      <span className="addToDo">
         <TextField
           label="Add a To-Do!"
           placeholder="buy milk, workout, etc"
           onChange={this.updateInput}
         />
         <List text={this.state.username} />
-      </div>
+      </span>
     );
   }
 }

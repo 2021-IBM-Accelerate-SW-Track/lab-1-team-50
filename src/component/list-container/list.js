@@ -2,12 +2,17 @@ import React, { Component } from "react";
 import IconButton from "@material-ui/core/IconButton";
 import DeleteIcon from "@material-ui/icons/Delete";
 import Checkbox from "@material-ui/core/Checkbox";
+import "./list.css";
+import { blue } from "@material-ui/core/colors";
 
 class List extends Component {
   state = {
     tags: [],
-    date_time: new Date().toLocaleString().replace(",", ""),
   };
+
+  checkBox() {
+    return false;
+  }
 
   rendertags() {
     if (this.state.tags.length === 0)
@@ -17,15 +22,26 @@ class List extends Component {
       <ul>
         {" "}
         {this.state.tags.map((tag) => (
-          <p key={tag}>
+          <p
+            key={tag}
+            style={{
+              color: "black",
+              textDecoration: this.checkBox ? "underline" : "Line-through",
+              outlineColor: blue,
+            }}
+          >
             {" "}
             <Checkbox
               // checked={checked}
-              // onChange={handleChange}
+              // onClick={() => this.checkBox(tag)}
               id="checkbox"
             />
-            {tag} {new Date().toLocaleString().replace(",", "")}
-            <IconButton id="delete">
+            {tag}{" "}
+            <span className="dateTime">
+              {" "}
+              {new Date().toLocaleString().replace(",", "")}{" "}
+            </span>
+            <IconButton id="delete" onClick={() => this.removeItem(tag)}>
               <DeleteIcon />
             </IconButton>{" "}
           </p>
@@ -34,12 +50,19 @@ class List extends Component {
     );
   }
 
+  removeItem = (tag) => {
+    let arr = this.state.tags;
+    return this.setState({ tags: arr.filter((item) => item !== tag) });
+  };
+
   render() {
     return (
-      <div>
-        <button onClick={this.increaseArr}>click me</button>
-        {this.rendertags()}
-      </div>
+      <span>
+        <button className="pressButton" onClick={this.increaseArr}>
+          ADD
+        </button>
+        <div className="listOutput">{this.rendertags()}</div>
+      </span>
     );
   }
 
