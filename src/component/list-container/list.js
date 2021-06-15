@@ -6,6 +6,7 @@ import Checkbox from "@material-ui/core/Checkbox";
 class List extends Component {
   state = {
     tags: [],
+    date_time: new Date().toLocaleString().replace(",", ""),
   };
 
   rendertags() {
@@ -16,7 +17,18 @@ class List extends Component {
       <ul>
         {" "}
         {this.state.tags.map((tag) => (
-          <h1 key={tag}>{tag}</h1>
+          <p key={tag}>
+            {" "}
+            <Checkbox
+              // checked={checked}
+              // onChange={handleChange}
+              id="checkbox"
+            />
+            {tag} {new Date().toLocaleString().replace(",", "")}
+            <IconButton id="delete">
+              <DeleteIcon />
+            </IconButton>{" "}
+          </p>
         ))}{" "}
       </ul>
     );
@@ -25,7 +37,6 @@ class List extends Component {
   render() {
     return (
       <div>
-        <h2>{this.state.textValue}</h2>
         <button onClick={this.increaseArr}>click me</button>
         {this.rendertags()}
       </div>
@@ -35,7 +46,7 @@ class List extends Component {
   increaseArr = () => {
     let arr = this.state.tags;
     let words = this.props.text;
-    if (arr.includes(words)) return;
+    if (arr.includes(words)) return alert("No duplicates allowed");
     this.setState({
       tags: [...arr, words],
     });

@@ -24,7 +24,6 @@ class ListUpdate extends Component {
   render() {
     return (
       <div>
-        {/* <input type="text" onChange={this.updateInput}></input> */}
         <TextField
           label="Add a To-Do!"
           placeholder="buy milk, workout, etc"
