@@ -8,8 +8,8 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <ListContainer />
       <ListUpdate />
+      <ListContainer />
     </div>
   );
 }

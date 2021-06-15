@@ -1,4 +1,27 @@
+<<<<<<< HEAD
 h1 {
   margin: 5% 0 0 20%;
 }
 /*# sourceMappingURL=header.css.map */
+=======
+.bannerImage {
+  width: 1000px;
+  height: 100px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  padding: 0;
+}
+
+.title {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: large;
+  margin: 0 0 0 40%;
+  padding: 0;
+}
+
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+>>>>>>> d30d4bccab8b2e3d5d43875c9aa54419926df874

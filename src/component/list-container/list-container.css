@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .bannerImage {
   width: 1000px;
   height: 200px;
@@ -13,6 +14,8 @@
   padding: 0;
 }
 
+=======
+>>>>>>> d30d4bccab8b2e3d5d43875c9aa54419926df874
 .list-container {
   background-color: #d1eded;
   margin: 2% 10% 10% 10%;
@@ -23,6 +26,7 @@ ul {
   list-style-type: none;
 }
 
+<<<<<<< HEAD
 .header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -33,6 +37,8 @@ ul {
   display: flex;
 }
 
+=======
+>>>>>>> d30d4bccab8b2e3d5d43875c9aa54419926df874
 #addButton {
   margin: 0;
   padding: 0px;
@@ -42,5 +48,14 @@ ul {
   margin: 0 0 0 40%;
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex;
+  display: inline-block;
 }
+<<<<<<< HEAD
+=======
+
+#buttonClick {
+  padding: 1%;
+  margin: 0 0 0 1%;
+  cursor: pointer;
+}
+>>>>>>> d30d4bccab8b2e3d5d43875c9aa54419926df874
