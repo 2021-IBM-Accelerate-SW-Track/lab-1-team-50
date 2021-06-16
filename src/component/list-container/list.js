@@ -13,7 +13,7 @@ class List extends Component {
       {
         text: "",
         timestamp: "",
-        isChecked: "false",
+        complete: false,
       },
     ],
   };
@@ -70,7 +70,7 @@ class List extends Component {
   render() {
     return (
       <span>
-        <IconButton className="pressButton" onClick={this.increaseArr}>
+        <IconButton className="pressButton" onChange={this.increaseArr}>
           <AddCircle />
         </IconButton>
         <div className="listOutput">{this.rendertags()}</div>
@@ -79,12 +79,11 @@ class List extends Component {
   }
 
   increaseArr = () => {
-    let tasks = this.state.todos;
-    let words = this.props.text;
-    let times = this.timestamp;
-    if (tasks.includes(words)) return alert("No duplicates allowed");
+    let word = this.props.text;
+    let time = this.timestamp;
+    if (word.includes(word)) return alert("No duplicates allowed");
     this.setState({
-      tags: [...[tasks, words, times]],
+      tags: [...[word, time, "false"]],
     });
   };
 }

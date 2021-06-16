@@ -3,7 +3,7 @@ import "./header.css";
 export default function Header() {
   return (
     <div>
-      <h1>Welcome to our todo List</h1>
+      <h1>Welcome to our To-Do List</h1>
       <div class="banner">
         <img
           class="bannerImage"
