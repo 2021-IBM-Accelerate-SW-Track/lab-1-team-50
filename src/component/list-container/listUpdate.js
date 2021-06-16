@@ -7,7 +7,7 @@ class ListUpdate extends Component {
     super(props);
 
     this.state = {
-      username: "",
+      todo: "",
     };
 
     this.updateInput = this.updateInput.bind(this);
@@ -15,12 +15,13 @@ class ListUpdate extends Component {
   }
 
   updateInput(event) {
-    this.setState({ username: event.target.value });
+    this.setState({ todo: event.target.value });
   }
 
   handleSubmit() {
-    console.log("Your input value is: " + this.state.username);
+    console.log("Your input value is: " + this.state.todo);
   }
+
   render() {
     return (
       <span className="addToDo">
@@ -29,7 +30,7 @@ class ListUpdate extends Component {
           placeholder="buy milk, workout, etc"
           onChange={this.updateInput}
         />
-        <List text={this.state.username} />
+        <List text={this.state.todo} />
       </span>
     );
   }

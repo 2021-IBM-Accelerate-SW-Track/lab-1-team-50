@@ -3,28 +3,38 @@ import IconButton from "@material-ui/core/IconButton";
 import DeleteIcon from "@material-ui/icons/Delete";
 import Checkbox from "@material-ui/core/Checkbox";
 import Input from "@material-ui/core/Input";
+import AddCircle from "@material-ui/icons/AddCircle";
 import "./list.css";
 import { blue } from "@material-ui/core/colors";
 
 class List extends Component {
   state = {
-    tags: [],
+    todos: [
+      {
+        text: "",
+        timestamp: "",
+        isChecked: "false",
+      },
+    ],
   };
 
   checkBox() {
-    return false;
+    this.isChecked = !this.isChecked;
+    return this.isChecked;
   }
 
   rendertags() {
-    if (this.state.tags.length === 0)
-      return <p>Please enter to do list tasks</p>;
+    //check for if there is white space or if it's empty
+    if (!this.state.text || /^\s*$/.test(this.state.text)) {
+      return;
+    }
 
     return (
       <ul>
         {" "}
-        {this.state.tags.map((tag) => (
+        {this.state.todos.map((todo) => (
           <p
-            key={tag}
+            key={todo}
             style={{
               color: "black",
               textDecoration: this.checkBox ? "null" : "Line-through",
@@ -33,17 +43,17 @@ class List extends Component {
           >
             {" "}
             <Checkbox
-              // checked={checked}
-              // onClick={() => this.checkBox(tag)}
+              checked={this.state.checked}
+              onClick={() => this.checkBox()}
               id="checkbox"
             />
-            <Input defaultValue={tag} />
-            {/* {tag}{" "} */}
+            <Input defaultValue={todo.text} />
+            {todo}{" "}
             <span className="dateTime">
               {" "}
               {new Date().toLocaleString().replace(",", "")}{" "}
             </span>
-            <IconButton id="delete" onClick={() => this.removeItem(tag)}>
+            <IconButton id="delete" onClick={() => this.removeItem(todo)}>
               <DeleteIcon />
             </IconButton>{" "}
           </p>
@@ -53,27 +63,28 @@ class List extends Component {
   }
 
   removeItem = (tag) => {
-    let arr = this.state.tags;
+    let arr = this.state.todos;
     return this.setState({ tags: arr.filter((item) => item !== tag) });
   };
 
   render() {
     return (
       <span>
-        <button className="pressButton" onClick={this.increaseArr}>
-          ADD
-        </button>
+        <IconButton className="pressButton" onClick={this.increaseArr}>
+          <AddCircle />
+        </IconButton>
         <div className="listOutput">{this.rendertags()}</div>
       </span>
     );
   }
 
   increaseArr = () => {
-    let arr = this.state.tags;
+    let tasks = this.state.todos;
     let words = this.props.text;
-    if (arr.includes(words)) return alert("No duplicates allowed");
+    let times = this.timestamp;
+    if (tasks.includes(words)) return alert("No duplicates allowed");
     this.setState({
-      tags: [...arr, words],
+      tags: [...[tasks, words, times]],
     });
   };
 }
