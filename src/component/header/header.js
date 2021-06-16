@@ -7,7 +7,7 @@ export default function Header() {
       <div class="banner">
         <img
           class="bannerImage"
-          src="https://i.imgur.com/Y7CWhEo.png"
+          src="https://i.imgur.com/Y7CWhEo.png?2"
           alt="todo list banner"
         ></img>
       </div>

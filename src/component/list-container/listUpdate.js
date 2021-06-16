@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import List from "./list";
 import TextField from "@material-ui/core/TextField";
-import "./listUpdate.css";
 
 class ListUpdate extends Component {
   constructor(props) {
