@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import IconButton from "@material-ui/core/IconButton";
 import DeleteIcon from "@material-ui/icons/Delete";
 import Checkbox from "@material-ui/core/Checkbox";
+import Input from "@material-ui/core/Input";
 import "./list.css";
 import { blue } from "@material-ui/core/colors";
 
@@ -26,7 +27,7 @@ class List extends Component {
             key={tag}
             style={{
               color: "black",
-              textDecoration: this.checkBox ? "underline" : "Line-through",
+              textDecoration: this.checkBox ? "null" : "Line-through",
               outlineColor: blue,
             }}
           >
@@ -36,7 +37,8 @@ class List extends Component {
               // onClick={() => this.checkBox(tag)}
               id="checkbox"
             />
-            {tag}{" "}
+            <Input defaultValue={tag} />
+            {/* {tag}{" "} */}
             <span className="dateTime">
               {" "}
               {new Date().toLocaleString().replace(",", "")}{" "}
