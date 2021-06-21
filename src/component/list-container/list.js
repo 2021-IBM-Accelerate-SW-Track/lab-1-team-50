@@ -93,7 +93,7 @@ class List extends Component {
 
         let inputText = document.createElement("input");
         inputText.type = "text";
-        inputText.value = todoID;
+        inputText.value = todoID[0];
         inputText.id = "editField";
         inputText.className = this.props.text;
         //alert(words)
