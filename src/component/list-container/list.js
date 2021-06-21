@@ -113,7 +113,10 @@ class List extends Component {
                     return alert("No duplicates allowed!");
                   }
             }
-            if (inputText.value.length < 1) return alert("Please enter a list item!");
+            if (inputText.value.length < 1){ 
+              inputText.remove();
+              return alert("Please enter a list item!");
+          }
                 holder.state.todos.map((todo) => {
                   if (todo === todoID) {
                     todo[0] = inputText.value;
