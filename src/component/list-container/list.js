@@ -88,7 +88,6 @@ class List extends Component {
   updateItem = (todoID) => {
     let arr = this.state.todos;
     //alert(arr)
-    let words = this.props.text; 
     let holder = this;
     let listDiv = document.getElementById("listOutputSpace");
 
