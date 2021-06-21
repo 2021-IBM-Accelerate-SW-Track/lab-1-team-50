@@ -94,16 +94,19 @@ class List extends Component {
 
         let inputText = document.createElement("input");
         inputText.type = "text";
-        inputText.value = this.props.text ;
+        inputText.value = todoID;
         inputText.id = "editField";
         inputText.className = this.props.text;
         //alert(words)
+        if(document.getElementById("editField") != null){
+          document.getElementById("editField").remove();
+        }
+        let x = document.getElementById("input-add");
+        x.value = ''
         inputText.addEventListener("keyup", function(event) {
             if (event.key === "Enter") {
-               // words = inputText.value;
-               // alert(inputText.value);
-                for (let i of arr) {
-                  if (i.includes(words)){ 
+            for (let i of arr) {
+                  if (i.includes(inputText.value)){ 
                     inputText.remove();
                     return alert("No duplicates allowed!");
                   }
