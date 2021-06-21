@@ -90,7 +90,7 @@ class List extends Component {
     //alert(arr)
     let words = this.props.text; 
     let holder = this;
-    let x = document.getElementById("listOutputSpace");
+    let listDiv = document.getElementById("listOutputSpace");
 
         let inputText = document.createElement("input");
         inputText.type = "text";
@@ -120,7 +120,7 @@ class List extends Component {
                 //alert(words);
             }
         });
-        x.prepend(inputText)
+        listDiv.prepend(inputText)
         alert("Press ENTER once you're done to edit text.")
   };
 //=================================================== End of Edit Field ===========================================\\
