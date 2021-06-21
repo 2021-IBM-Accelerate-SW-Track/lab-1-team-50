@@ -86,6 +86,7 @@ class List extends Component {
   //using map to find desired todoID then editing that element with whatever is in the text field
   updateItem = (todoID) => {
     let arr = this.state.todos;
+    alert(arr)
     let words = this.props.text; 
     let holder = this;
     let x = document.getElementById("listOutputSpace");
@@ -106,16 +107,14 @@ class List extends Component {
                     return alert("No duplicates allowed!");
                   }
                 }
-                //the part that would actually get it to run right.
                 holder.state.todos.map((todo) => {
                   if (todo === todoID) {
-                    todo[0] = holder.props.text;
+                    todo[0] = inputText.value;
                   }
                   return holder.setState({//rerenders page after editing element.
                     todos: holder.state.todos,
                   });
                 }); 
-                // The part that would do something but idk what I'm doing here.
                 inputText.remove();
                 alert(words);
             }
