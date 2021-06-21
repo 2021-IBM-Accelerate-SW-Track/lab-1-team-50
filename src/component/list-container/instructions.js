@@ -5,21 +5,23 @@ import AddCircleIcon from "@material-ui/icons/AddCircle";
 import Edit from "@material-ui/icons/Edit";
 
 export default function Instructions() {
+  let instructions = (<div class = "toDoInstructions">
+  <h3>Todo List Instructions</h3>
+  <p>
+    <Checkbox /> - Check complete{" "}
+  </p>
+  <p>
+    <AddCircleIcon /> - Add new list item
+  </p>
+  <p>
+    <Edit /> - Enter new todo text in textfield, then click edit
+  </p>
+  <p>
+    <DeleteIcon /> - Deletes list item
+  </p>
+</div>)
+
   return (
-    <div>
-      <h3>Todo List Instructions</h3>
-      <p>
-        <Checkbox /> - Check complete{" "}
-      </p>
-      <p>
-        <AddCircleIcon /> - Add new list item
-      </p>
-      <p>
-        <Edit /> - Enter new todo text in textfield, then click edit
-      </p>
-      <p>
-        <DeleteIcon /> - Deletes list item
-      </p>
-    </div>
+      instructions  
   );
 }

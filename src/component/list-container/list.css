@@ -10,4 +10,10 @@
 ul {
   text-align: left;
 }
+
+.toDoInstructions{
+  color: grey;
+  position: fixed;
+
+}
 /*# sourceMappingURL=list.css.map */
