@@ -83,7 +83,8 @@ class List extends Component {
     });
   };
 
-  //using map to find desired todoID then editing that element with whatever is in the text field
+  //=================================================== Start of Edit Field ===========================================\\
+  //using map to find desired todoID then creating a textfield element to enter the new text to, then updating that item once text is entered. -K.S.
   updateItem = (todoID) => {
     let arr = this.state.todos;
     //alert(arr)
@@ -121,20 +122,9 @@ class List extends Component {
         });
         x.prepend(inputText)
         alert("Press ENTER once you're done to edit text.")
-
-   /* for (let i of arr) {
-      if (i.includes(words)) return alert("No duplicates allowed!");
-    }
-    this.state.todos.map((todo) => {
-      if (todo === todoID) {
-        todo[0] = this.props.text;
-      }
-      // this rerenders the page after editing the desired todo element
-      return this.setState({
-        todos: this.state.todos,
-      });
-    });*/
   };
+//=================================================== End of Edit Field ===========================================\\
+
 
   //adds the user inputted task to the  array
   increaseArr = () => {
