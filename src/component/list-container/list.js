@@ -86,7 +86,7 @@ class List extends Component {
   //using map to find desired todoID then editing that element with whatever is in the text field
   updateItem = (todoID) => {
     let arr = this.state.todos;
-    alert(arr)
+    //alert(arr)
     let words = this.props.text; 
     let holder = this;
     let x = document.getElementById("listOutputSpace");
@@ -96,11 +96,11 @@ class List extends Component {
         inputText.value = this.props.text ;
         inputText.id = "editField";
         inputText.className = this.props.text;
-        alert(words)
+        //alert(words)
         inputText.addEventListener("keyup", function(event) {
             if (event.key === "Enter") {
                // words = inputText.value;
-                alert(inputText.value);
+               // alert(inputText.value);
                 for (let i of arr) {
                   if (i.includes(words)){ 
                     inputText.remove();
@@ -116,10 +116,11 @@ class List extends Component {
                   });
                 }); 
                 inputText.remove();
-                alert(words);
+                //alert(words);
             }
         });
         x.prepend(inputText)
+        alert("Press ENTER once you're done to edit text.")
 
    /* for (let i of arr) {
       if (i.includes(words)) return alert("No duplicates allowed!");
