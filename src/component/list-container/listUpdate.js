@@ -31,6 +31,7 @@ class ListUpdate extends Component {
               placeholder="buy milk, workout, etc"
               onChange={this.updateInput}
               data-testid="new-item-input"
+              id ="input-add"
             />
 
             <List text={this.state.userText} />

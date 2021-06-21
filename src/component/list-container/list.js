@@ -57,7 +57,7 @@ class List extends Component {
           <AddCircleIcon />
         </IconButton>
 
-        <div className="listOutput">{this.renderTodos()}</div>
+        <div className="listOutput" id = "listOutputSpace">{this.renderTodos()}</div>
       </span>
     );
   }
@@ -83,23 +83,57 @@ class List extends Component {
     });
   };
 
-  //using map to find desired todoID then editing that element with whatever is in the text field
+  //=================================================== Start of Edit Field ===========================================\\
+  //using map to find desired todoID then creating a textfield element to enter the new text to, then updating that item once text is entered. -K.S.
   updateItem = (todoID) => {
     let arr = this.state.todos;
-    let words = this.props.text;
-    for (let i of arr) {
-      if (i.includes(words)) return alert("No duplicates allowed!");
-    }
-    this.state.todos.map((todo) => {
-      if (todo === todoID) {
-        todo[0] = this.props.text;
-      }
-      // this rerenders the page after editing the desired todo element
-      return this.setState({
-        todos: this.state.todos,
-      });
-    });
+    //alert(arr)
+    let holder = this;
+    let listDiv = document.getElementById("listOutputSpace");
+
+        let inputText = document.createElement("input");
+        inputText.type = "text";
+        inputText.value = todoID[0];
+        inputText.id = "editField";
+        inputText.className = this.props.text;
+        //alert(words)
+        if(document.getElementById("editField") != null){
+          document.getElementById("editField").remove();
+        }
+        let x = document.getElementById("input-add");
+        x.value = ''
+        inputText.addEventListener('focus', (event) => {
+          inputText.value = ''
+        })
+        inputText.addEventListener("keyup", function(event) {
+            if (event.key === "Enter") {
+            for (let i of arr) {
+                  if (i.includes(inputText.value)){ 
+                    inputText.remove();
+                    return alert("No duplicates allowed!");
+                  }
+            }
+            if (inputText.value.length < 1){ 
+              inputText.remove();
+              return alert("Please enter a list item!");
+          }
+                holder.state.todos.map((todo) => {
+                  if (todo === todoID) {
+                    todo[0] = inputText.value;
+                  }
+                  return holder.setState({//rerenders page after editing element.
+                    todos: holder.state.todos,
+                  });
+                }); 
+                inputText.remove();
+                //alert(words);
+            }
+        });
+        listDiv.prepend(inputText)
+        alert("Press ENTER once you're done to edit text.")
   };
+//=================================================== End of Edit Field ===========================================\\
+
 
   //adds the user inputted task to the  array
   increaseArr = () => {

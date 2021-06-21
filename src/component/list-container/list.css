@@ -10,4 +10,13 @@
 ul {
   text-align: left;
 }
+
+.toDoInstructions{
+  color: grey;
+  position: fixed;
+
+}
+.inputEdit{
+  background-color: maroon;
+}
 /*# sourceMappingURL=list.css.map */
