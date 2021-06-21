@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 import DeleteIcon from "@material-ui/icons/Delete";
 import Checkbox from "@material-ui/core/Checkbox";
-import Edit from "@material-ui/icons/Edit";
 import AddCircleIcon from "@material-ui/icons/AddCircle";
+import Edit from "@material-ui/icons/Edit";
 import { IconButton } from "@material-ui/core";
-
 import "./list.css";
 
 // initialize empty array
@@ -70,7 +69,7 @@ class List extends Component {
         todo[2] = !booln;
       }
       //this rerenders the page after changing the boolean value of given todoID
-      this.setState({
+      return this.setState({
         todos: this.state.todos,
       });
     });
@@ -86,6 +85,11 @@ class List extends Component {
 
   //using map to find desired todoID then editing that element with whatever is in the text field
   updateItem = (todoID) => {
+    let arr = this.state.todos;
+    let words = this.props.text;
+    for (let i of arr) {
+      if (i.includes(words)) return alert("No duplicates allowed!");
+    }
     this.state.todos.map((todo) => {
       if (todo === todoID) {
         todo[0] = this.props.text;
