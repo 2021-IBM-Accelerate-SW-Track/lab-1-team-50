@@ -101,7 +101,10 @@ class List extends Component {
                // words = inputText.value;
                 alert(inputText.value);
                 for (let i of arr) {
-                  if (i.includes(words)) return alert("No duplicates allowed!");
+                  if (i.includes(words)){ 
+                    inputText.remove();
+                    return alert("No duplicates allowed!");
+                  }
                 }
                 //the part that would actually get it to run right.
                 holder.state.todos.map((todo) => {
