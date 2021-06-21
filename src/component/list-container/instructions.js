@@ -14,7 +14,7 @@ export default function Instructions() {
     <AddCircleIcon /> - Add new list item
   </p>
   <p>
-    <Edit /> - Enter new todo text in textfield, then click edit
+    <Edit /> - Click edit. Enter new text in the new field.
   </p>
   <p>
     <DeleteIcon /> - Deletes list item

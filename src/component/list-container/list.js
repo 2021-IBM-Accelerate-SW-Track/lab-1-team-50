@@ -103,6 +103,9 @@ class List extends Component {
         }
         let x = document.getElementById("input-add");
         x.value = ''
+        inputText.addEventListener('focus', (event) => {
+          inputText.value = ''
+        })
         inputText.addEventListener("keyup", function(event) {
             if (event.key === "Enter") {
             for (let i of arr) {
