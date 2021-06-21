@@ -57,7 +57,7 @@ class List extends Component {
           <AddCircleIcon />
         </IconButton>
 
-        <div className="listOutput">{this.renderTodos()}</div>
+        <div className="listOutput" id = "listOutputSpace">{this.renderTodos()}</div>
       </span>
     );
   }
@@ -86,8 +86,40 @@ class List extends Component {
   //using map to find desired todoID then editing that element with whatever is in the text field
   updateItem = (todoID) => {
     let arr = this.state.todos;
-    let words = this.props.text;
-    for (let i of arr) {
+    let words = this.props.text; 
+    let holder = this;
+    let x = document.getElementById("listOutputSpace");
+
+        let inputText = document.createElement("input");
+        inputText.type = "text";
+        inputText.value = this.props.text ;
+        inputText.id = "editField";
+        inputText.className = this.props.text;
+        alert(words)
+        inputText.addEventListener("keyup", function(event) {
+            if (event.key === "Enter") {
+               // words = inputText.value;
+                alert(inputText.value);
+                for (let i of arr) {
+                  if (i.includes(words)) return alert("No duplicates allowed!");
+                }
+                //the part that would actually get it to run right.
+                holder.state.todos.map((todo) => {
+                  if (todo === todoID) {
+                    todo[0] = holder.props.text;
+                  }
+                  return holder.setState({//rerenders page after editing element.
+                    todos: holder.state.todos,
+                  });
+                }); 
+                // The part that would do something but idk what I'm doing here.
+                inputText.remove();
+                alert(words);
+            }
+        });
+        x.prepend(inputText)
+
+   /* for (let i of arr) {
       if (i.includes(words)) return alert("No duplicates allowed!");
     }
     this.state.todos.map((todo) => {
@@ -98,7 +130,7 @@ class List extends Component {
       return this.setState({
         todos: this.state.todos,
       });
-    });
+    });*/
   };
 
   //adds the user inputted task to the  array
